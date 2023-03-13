@@ -9,12 +9,7 @@ class SigninCest
 {
     public function signInSuccessfully(AcceptanceTester $I)
     {
-        // //button//span[contains(text(), "keyboard_arrow_down")]
-        // //p[contains(text(), "english")]
-        // //button//span[contains(text(), "Log in")]
-//        $I->waitForElementVisible('//button//span[contains(text(), "keyboard_arrow_down")]');
-//        $I->click('//button//span[contains(text(), "keyboard_arrow_down")]');
-//        $I->click('//p[contains(text(), "english")]');
+
         $I->waitForElementVisible('//button//span[contains(text(), "Войти")]');
         $I->click('//button//span[contains(text(), "Войти")]');
         $I->waitForElementVisible('//input[@id=":r0:"]', 15);
