@@ -9,7 +9,7 @@ class Login
     public static $url = 'https://account.documentolog.com';
 
     private static $signinButton = '//button//span[contains(text(), "Войти")]';
-    private static $emailField = 'input[name="email"][type="email"]';
+    private static $emailField = '//input[name="email"][type="email"]';
     private static $passwordField = '//label[text()="Password"]/following-sibling::div//input';
     private static $loginButton = "(//button[text()='Log in'])[1]";
     private static $checkDoc = '//h6[contains(text(), "Документы")]';
