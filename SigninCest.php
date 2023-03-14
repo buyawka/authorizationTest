@@ -3,27 +3,21 @@
 namespace Tests\Acceptance;
 
 use Tests\Support\AcceptanceTester;
-use Codeception\Util\Locator;
+use Tests\Support\Login;
 
 class SigninCest
 {
-    public function signInSuccessfully(AcceptanceTester $I)
+    public function signInSuccessfully(Login $loginPage)
     {
-
-        $I->waitForElementVisible('//button//span[contains(text(), "Войти")]');
-        $I->click('//button//span[contains(text(), "Войти")]');
-        $I->waitForElementVisible('//input[@id=":r0:"]', 15);
-        $I->fillField('//input[@id=":r0:"]', 'jasmina1306@mail.ru');
-        $I->fillField('//input[@id=":r1:"]', 'Zhasya01');
-        $I->click('//button[@id=":r2:"]');
-        $I->waitForElementVisible('//h6[contains(text(), "Документы")]');
-        $I->see('Жасмина');
-
-
+        $loginPage->navigateLoginPage();
+        $loginPage->enterEmail('jasmina1306@mail.ru');
+        $loginPage->enterPassword('Zhasya01');
+        $loginPage->clickLoginButton();
+        $loginPage->checkVisibility();
     }
 
     // tests
-    public function tryToTest(AcceptanceTester $I)
-    {
-    }
+   // public function tryToTest(AcceptanceTester $I)
+   // {
+   // }
 }
